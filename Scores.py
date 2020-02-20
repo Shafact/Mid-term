@@ -38,32 +38,30 @@ def read_file(path):
         return l
 
 # define the function that can add sum and avg
-def addsumavg(list):
-    total = sum(list[1:])
-    avg_score = round(total/(len(list)-1),2)
-    list.append(total)
-    list.append(avg_score)
-    return list
+def addsumavg(ls):
+    total = sum(ls[1:])
+    avg_score = round(total/(len(ls)-1),2)
+    ls.append(total)
+    ls.append(avg_score)
+    return ls
 
 # define a function that be able to sort by sum
-def sortSum(list):
-    return list[-1]
+def sortSum(ls):
+    return ls[-1]
 
 # define a function that will replace scores to "不及格"
-def replace_scores(list):
-    for i in range(1,(len(list)-2)):
-        if list[i] < 60:
-            list[i] = '不及格'
-        else:
-            pass
-        return list
+def replace_scores(ls):
+    for i in range(1, (len(ls)-2)):
+        if ls[i] < 60:
+            ls[i] = '不及格'
+    return ls
 
 # define a function to turn each int or float to string and combine the all list into one string
-def covStr(list):
-    for i in range(len(list)):
-        list[i] = str(list[i])
-    list = ' '.join(list)
-    return list
+def covStr(ls):
+    for i in range(len(ls)):
+        ls[i] = str(ls[i])
+    ls = ' '.join(ls)
+    return ls
 
 
 # read the file and create the scores list
@@ -94,7 +92,7 @@ print(summary)
 # replace with '不及格'
 for i in range(len(sorted_scores)):
     sorted_scores[i] = replace_scores(sorted_scores[i])
-print(sorted_scores)
+print("=========== 不及格 ===========\n", sorted_scores)
 
 # add back title and summary
 sorted_scores.insert(0, summary)
