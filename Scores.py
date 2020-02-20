@@ -96,7 +96,7 @@ for i in range(len(sorted_scores)):
     sorted_scores[i] = replace_scores(sorted_scores[i])
 print(sorted_scores)
 
-# adding back title and summary
+# add back title and summary
 sorted_scores.insert(0, summary)
 sorted_scores.insert(0, scores[0])
 print(sorted_scores)
