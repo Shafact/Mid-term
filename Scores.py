@@ -113,6 +113,10 @@ for i in range(len(sorted_scores)):
     sorted_scores[i] = covStr(sorted_scores[i])
 print(sorted_scores)
 
+# write into result.txt
+with open('result.txt', 'w') as f:
+    f.writelines([i + '\n' for i in sorted_scores])
+
 
 
 
