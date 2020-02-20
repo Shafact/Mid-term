@@ -58,6 +58,14 @@ def replace_scores(list):
             pass
         return list
 
+# define a function to turn each int or float to string and combine the all list into one string
+def covStr(list):
+    for i in range(len(list)):
+        list[i] = str(list[i])
+    list = ' '.join(list)
+    return list
+
+
 # read the file and create the scores list
 scores = read_file('report.txt')
 
@@ -99,6 +107,12 @@ sorted_scores[0].insert(0,"名次")
 for i in range(1, len(sorted_scores)):
     sorted_scores[i].insert(0,i-1)
 print(sorted_scores)
+
+# join each element of sorted_scores as one string
+for i in range(len(sorted_scores)):
+    sorted_scores[i] = covStr(sorted_scores[i])
+print(sorted_scores)
+
 
 
 
